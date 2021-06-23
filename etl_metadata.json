@@ -1,0 +1,53 @@
+{
+  "name": "Olist Batch flex template",
+  "description": "Batch beam in python flex template.",
+  "parameters": [
+    {
+      "name": "input_itens",
+      "label": "Input itens file to process.",
+      "helpText": "Input itens file to process."
+    },
+    {
+      "name": "input_sellers",
+      "label": "Input seller file to process.",
+      "helpText": "Input seller file to process.",
+      "isOptional": false
+    },
+	{
+      "name": "input_products",
+      "label": "Input products file to process.",
+      "helpText": "Input products file to process.",
+      "isOptional": true
+    },
+	{
+      "name": "input_order",
+      "label": "Input order file to process.",
+      "helpText": "Input order file to process.",
+      "isOptional": false
+    },
+	{
+      "name": "input_reviews",
+      "label": "Input reviews file to process.",
+      "helpText": "Input reviews file to process.",
+      "isOptional": false
+    },
+	{
+      "name": "input_payments",
+      "label": "Input payments file to process.')",
+      "helpText": "Input payments file to process.')",
+      "isOptional": false
+    },
+	{
+      "name": "input_customer",
+      "label": "Input customer file to process.",
+      "helpText": "Input customer file to process.",
+      "isOptional": false
+    },
+	{
+      "name": "output",
+      "label": "BigQuery output table name.",
+      "helpText": "Name of the BigQuery output table name.",
+      "isOptional": false
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+instruções - criar imagem Docker para o dataflow no python , a imagem será utilizado pelo flex_template
+gcr.io/dataflow-customtemplate/etl_olist
+
+
+project-id = dataflow-customtemplate
+
+tag = etl_olist
+
+gcloud builds submit --tag gcr.io/dataflow-customtemplate/etl_olist
+
+nome da imagem criada gcr.io/dataflow-customtemplate/etl_olist 
+
+
+criar o flex-template
+
+gcloud dataflow flex-template build gs://etl-model/olist/flex_template/olist-etl.json --image gcr.io/dataflow-customtemplate/etl_olist --sdk-language "PYTHON" --metadata-file etl_metadata.json
+
+rodar o template criado
+gcloud dataflow flex-template run "olist-flex-`date +%Y%m%d-%H%M%S`" --template-file-gcs-location gs://etl-model/olist/flex_template/olist-etl.json --parameters input_itens=gs://etl-model/olist/data/olist_order_items_dataset.csv --parameters input_sellers=gs://etl-model/olist/data/olist_sellers_dataset.csv --parameters input_products=gs://etl-model/olist/data/olist_products_dataset.csv --parameters input_order=gs://etl-model/olist/data/olist_orders_dataset.csv --parameters input_reviews=gs://etl-model/olist/data/olist_order_reviews_dataset.csv --parameters input_payments=gs://etl-model/olist/data/olist_order_payments_dataset.csv --parameters input_customer=gs://etl-model/olist/data/olist_customers_dataset.csv --parameters output=gs://etl-model/olist/output/output --region us-east1
+
+
+
+
